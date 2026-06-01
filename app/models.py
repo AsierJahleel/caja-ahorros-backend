@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from .database import Base
 
 class Socio(Base):
@@ -13,3 +13,4 @@ class Transaccion(Base):
     id = Column(Integer, primary_key=True, index=True)
     tipo = Column(String)  # "deposito" o "retiro"
     monto = Column(Float)
+    socio_id = Column(Integer, ForeignKey("socios.id"))
