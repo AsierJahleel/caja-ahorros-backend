@@ -4,3 +4,4 @@
 "### RF-03: Consulta de Saldos"  
 "### RF-04: Contabilidad Automatica"  
 "### Arquitectura: Capas"  
+"### Instalacion: pip install -r requirements.txt"  
