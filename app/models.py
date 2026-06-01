@@ -13,4 +13,4 @@ class Transaccion(Base):
     id = Column(Integer, primary_key=True, index=True)
     tipo = Column(String)  # "deposito" o "retiro"
     monto = Column(Float)
-    socio_id = Column(Integer, ForeignKey("socios.id"))
+    socio_id = Column(Integer, ForeignKey("socios.id"))# Modelos 

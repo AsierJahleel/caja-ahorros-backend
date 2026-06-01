@@ -46,4 +46,4 @@ def crear_transaccion(tipo: str, monto: float, socio_id: int, db: Session = Depe
     transaccion = models.Transaccion(tipo=tipo, monto=monto, socio_id=socio_id)
     db.add(transaccion)
     db.commit()
-    return {"mensaje": "Transacción realizada con éxito", "nuevo_saldo": socio.saldo}
+    return {"mensaje": "Transacción realizada con éxito", "nuevo_saldo": socio.saldo}# API Principal 
