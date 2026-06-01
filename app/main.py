@@ -29,3 +29,21 @@ def crear_socio(socio: schemas.SocioCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(db_socio)
     return db_socio
+
+@app.post("/transacciones/")
+def crear_transaccion(tipo: str, monto: float, socio_id: int, db: Session = Depends(get_db)):
+    socio = db.query(models.Socio).filter(models.Socio.id == socio_id).first()
+    if not socio:
+        raise HTTPException(status_code=404, detail="Socio no encontrado")
+    
+    if tipo == "deposito":
+        socio.saldo += monto
+    elif tipo == "retiro":
+        if socio.saldo < monto:
+            raise HTTPException(status_code=400, detail="Fondos insuficientes")
+        socio.saldo -= monto
+    
+    transaccion = models.Transaccion(tipo=tipo, monto=monto, socio_id=socio_id)
+    db.add(transaccion)
+    db.commit()
+    return {"mensaje": "Transacción realizada con éxito", "nuevo_saldo": socio.saldo}
