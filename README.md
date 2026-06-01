@@ -6,3 +6,4 @@
 "### Arquitectura: Capas"  
 "### Instalacion: pip install -r requirements.txt"  
 "### Ejecucion: uvicorn app.main:app"  
+"### Autor: Asier Jahleel"  
