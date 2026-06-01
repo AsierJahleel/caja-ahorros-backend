@@ -5,3 +5,4 @@
 "### RF-04: Contabilidad Automatica"  
 "### Arquitectura: Capas"  
 "### Instalacion: pip install -r requirements.txt"  
+"### Ejecucion: uvicorn app.main:app"  
