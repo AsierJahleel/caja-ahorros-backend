@@ -3,3 +3,4 @@
 "### RF-02: Gestion de Transacciones"  
 "### RF-03: Consulta de Saldos"  
 "### RF-04: Contabilidad Automatica"  
+"### Arquitectura: Capas"  
